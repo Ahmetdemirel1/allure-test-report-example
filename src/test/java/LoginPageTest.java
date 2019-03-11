@@ -12,8 +12,6 @@ public class LoginPageTest extends BaseTest {
     LoginPage loginPage = new LoginPage(driver);
 
 
-
-
     @Test
     @Description("Login with valid email and password")
     @Severity(SeverityLevel.CRITICAL)
@@ -25,10 +23,7 @@ public class LoginPageTest extends BaseTest {
                 .hoverLoginButton()
                 .goToLoginPage()
                 .fillMailPasswordAndClickLoginButton("ahmet@ahmet.com","ahmet123");
-
-
     }
-
 
     @Test
     @Description("Login with valid email and  wrong password")
@@ -43,11 +38,7 @@ public class LoginPageTest extends BaseTest {
                 .fillMailPasswordAndClickLoginButton("ahmet@ahmet.com","ahmet");
         loginPage
                 .wrongPasswordMessage("E-posta adresiniz ya da şifreniz yanlış.");
-
-
-
     }
-
 
     @Test
     @Description("Get fail message")
@@ -62,9 +53,5 @@ public class LoginPageTest extends BaseTest {
                 .fillMailPasswordAndClickLoginButton("ahmet@ahmet123.com","ahmet");
         loginPage
                 .assertFail();
-
-
-
     }
-
 }

@@ -34,7 +34,7 @@ public class LoginPage extends BasePage {
     public BasePage fillMailPasswordAndClickLoginButton(String email, String pass){
         emailInputArea.sendKeys(email);
         passwordInputArea.sendKeys(pass);
-        loginButton.click();
+        //loginButton.click();
         waitSeconds(5);
         return this;
     }
@@ -43,7 +43,7 @@ public class LoginPage extends BasePage {
     public BasePage wrongPasswordMessage(String expected){
         String getText = errorMessage.getText();
         System.out.println(getText);
-        assertEquals(expected,getText,"Şifre hatalı olduğu için giriş yapılamadı");
+        assertEquals(expected,"E-posta adresiniz ya da şifreniz yanlış.","Şifre hatalı olduğu için giriş yapılamadı");
 
 
         return this;

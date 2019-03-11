@@ -1,0 +1,1 @@
+{"uuid":"40326754-f47b-4660-a645-7c4115792b8a","historyId":"3389daf7a6464dc7fd598fd29b7f0e8","labels":[{"name":"suite","value":"LoginPageTest"},{"name":"package","value":"LoginPageTest"}],"name":"loginHomePage()","status":"passed","stage":"finished","description":"Login with valid email and password","start":1552161618281,"stop":1552161634974}
