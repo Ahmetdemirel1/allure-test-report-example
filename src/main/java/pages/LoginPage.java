@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -34,14 +35,14 @@ public class LoginPage extends BasePage {
     public BasePage fillMailPasswordAndClickLoginButton(String email, String pass){
         emailInputArea.sendKeys(email);
         passwordInputArea.sendKeys(pass);
-        //loginButton.click();
+        loginButton.click();
         waitSeconds(5);
         return this;
     }
 
 
     public BasePage wrongPasswordMessage(String expected){
-        String getText = errorMessage.getText();
+        String getText = driver.findElement(By.xpath("//div[@class='response-message-content']")).getText();
         System.out.println(getText);
         assertEquals(expected,"E-posta adresiniz ya da şifreniz yanlış.","Şifre hatalı olduğu için giriş yapılamadı");
 

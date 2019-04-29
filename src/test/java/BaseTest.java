@@ -3,6 +3,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -14,10 +15,11 @@ public class BaseTest {
 
     @BeforeEach
     public void setUp(){
-        DesiredCapabilities capabilities = new DesiredCapabilities();
         System.setProperty("webdriver.chrome.driver","/Users/sahabt/Desktop/swacademy/deneme/allure-test-report/driver/chromedriver");
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
 
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(options);
         wait = new WebDriverWait(driver,15);
 
 
@@ -25,8 +27,8 @@ public class BaseTest {
 
     @AfterEach
     public void driverQuit(){
-//        driver.close();
-        driver.quit();
+
+       driver.quit();
     }
 
 

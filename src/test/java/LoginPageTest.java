@@ -16,6 +16,7 @@ public class LoginPageTest extends BaseTest {
     @Description("Login with valid email and password")
     @Severity(SeverityLevel.CRITICAL)
     @Story("User login the page with email and password.")
+    @Issue("Test issue")
     public void loginHomePage(){
 
         new HomePage(driver)
